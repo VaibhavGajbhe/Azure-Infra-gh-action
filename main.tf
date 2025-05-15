@@ -15,10 +15,14 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "224ca6aa-8178-4cd2-bcee-797840d267cf"
+  subscription_id = var.subscription_id
 }
 
 
+variable "subscription_id" {
+  type        = string
+  description = "Azure Subscription ID"
+}
 
 resource "azurerm_resource_group" "rg1" {
   name     = "dev-tfstate-rg-01"
