@@ -26,6 +26,6 @@ resource "azurerm_resource_group" "rg1" {
   location = "westus"
 }
 resource "azurerm_resource_group" "rg2" {
-  name     = "dev-tfstate-rg-020"
+  name     = "dev-tfstate-rg-02"
   location = "westus"
 }
