@@ -16,12 +16,9 @@ terraform {
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
-}
-
-
-variable "subscription_id" {
-  type        = string
-  description = "Azure Subscription ID"
+  tenant_id       = var.tenant_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
 }
 
 resource "azurerm_resource_group" "rg1" {
