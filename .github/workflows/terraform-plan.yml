@@ -38,6 +38,6 @@ jobs:
             shell: powershell
             run: |
               terraform init 
-              terraform plan -no-color
+              terraform plan
                       
            
