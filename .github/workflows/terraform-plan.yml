@@ -32,11 +32,7 @@ jobs:
 
           - name: Terraform Validate code
             run: terraform validate
-
-
+            
           - name: Terraform Plan
-            run: |
-              terraform init 
-              terraform plan
-                      
-           
+            run: terraform plan
+          
