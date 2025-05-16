@@ -19,12 +19,14 @@ jobs:
       - name: Run TFLint and save report
         run: |
           tflint --init
-          tflint --format sarif > tflint-results.sarif
+          tflint --format json > tflint-results.json
+        #   tflint --format sarif > tflint-results.sarif
+          
 
-      - name: Upload TFLint report to GitHub Security
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: tflint-results.sarif
+    #   - name: Upload TFLint report to GitHub Security
+    #     uses: github/codeql-action/upload-sarif@v2
+    #     with:
+    #       sarif_file: tflint-results.sarif
 
 
   terraform-plan-apply:
