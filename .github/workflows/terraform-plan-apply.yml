@@ -27,9 +27,9 @@ jobs:
           sarif_file: tflint-results.sarif
 
 
-  terraform-apply:
+  terraform-plan-apply:
     runs-on: ubuntu-latest
-    environment: production  # 👈 Manual approval happens here
+    # environment: production  # 👈 Manual approval happens here
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
