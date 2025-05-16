@@ -32,10 +32,9 @@ jobs:
             run: terraform validate
 
 
-          - name: Terraform Plan
-            shell: bash
+          - name: Terraform Plan (Windows runner)
             run: |
-              terraform init -input=false -no-color
-              terraform plan -input=false -no-color -out=tfplan
+              terraform init
+              terraform plan -no-color
             
            
