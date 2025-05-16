@@ -35,8 +35,9 @@ jobs:
 
 
           - name: Terraform Plan
+            shell: powershell
             run: |
-              terraform init | Write-Host
-              terraform plan -no-color | Write-Host
+              terraform init 
+              terraform plan -no-color
                       
            
