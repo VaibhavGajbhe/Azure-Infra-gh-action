@@ -30,3 +30,8 @@ resource "azurerm_resource_group" "rg2" {
   name     = "dev-tfstate-rg-02"
   location = "westus"
 }
+
+resource "azurerm_resource_group" "rg2" {
+  name     = "dev-hulk-rg"
+  location = "westus"
+}
