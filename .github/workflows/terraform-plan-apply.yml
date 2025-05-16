@@ -15,7 +15,7 @@ permissions:
 jobs:
   Linting-Tool:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
+    if: github.event.action != 'closed'
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
