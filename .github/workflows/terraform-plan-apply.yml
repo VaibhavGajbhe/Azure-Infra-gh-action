@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -36,6 +40,8 @@ jobs:
 
   terraform-plan-apply:
     runs-on: ubuntu-latest
+    needs: Linting-Tool
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/feature/')
     # environment: production  # 👈 Manual approval happens here
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -62,4 +68,5 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
