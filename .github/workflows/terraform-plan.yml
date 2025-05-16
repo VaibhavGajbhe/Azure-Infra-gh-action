@@ -32,6 +32,10 @@ jobs:
             run: terraform validate
 
 
-          - name: Terraform Plan
-            run: terraform plan
+          - name: Terraform Plan (Windows Workaround)
+            shell: pwsh
+            run: |
+              terraform init | Write-Output
+              terraform plan -out=tfplan | Write-Output
+              terraform show -no-color tfplan | Write-Output
            
