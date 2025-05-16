@@ -20,10 +20,12 @@ jobs:
 
           - name: Show current Azure account
             run: az account show
+  
           - name: Set up Terraform
             uses: hashicorp/setup-terraform@v3
-            with:
-              creds: ${{ secrets.AZURE_CREDENTIALS }}
+            
+          - name: Check Terraform Installation
+            run: terraform -version
 
           - name: Terraform Init
             run: terraform init
@@ -34,6 +36,7 @@ jobs:
 
           - name: Terraform Plan
             run: |
-              terraform plan
-            
+              terraform init | Write-Host
+              terraform plan -no-color | Write-Host
+                      
            
