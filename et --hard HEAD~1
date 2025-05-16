@@ -1,0 +1,233 @@
+[33mcommit 8495c5366837a7b3fe3946f20673ea795983b3b0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 17:36:16 2025 +0530
+
+    Ignore .terraform directory
+
+[33mcommit de299a03c3f2e529d8c9c98efb3d111d1f00f651[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 17:27:36 2025 +0530
+
+    terraform plan
+
+[33mcommit bb8accb99b2bef5393efc0bb8cc2c4b125ad826a[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 17:19:42 2025 +0530
+
+    terraform plan
+
+[33mcommit c2eebb95eaaa846bc0d1e425374e3d1c6fa3003d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 17:14:54 2025 +0530
+
+    terraform plan
+
+[33mcommit 8bff0fae8d60ddb5170a514bf562c196d09ce426[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 17:14:11 2025 +0530
+
+    terraform plan
+
+[33mcommit 8409c377aad8f4bfe3fa6abae56f8dd1314ab0e1[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 17:04:22 2025 +0530
+
+    terraform plan
+
+[33mcommit 2b8b9b92af5b84d377ccf74e6ec6f47007945384[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:45:32 2025 +0530
+
+    terraform plan
+
+[33mcommit 9a509085af9a87b18160910db4346189198c62d9[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:42:51 2025 +0530
+
+    terraform plan
+
+[33mcommit 32f9b1f365b0095a197240f253243b0e136926fb[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:39:53 2025 +0530
+
+    terraform plan
+
+[33mcommit ac0da281311eb83f1fc5aafbe01ce0bbba01eed3[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:29:30 2025 +0530
+
+    terraform plan
+
+[33mcommit c4b42c8caf1baeae7b87fdaf53b7b44d1234c7c6[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:28:36 2025 +0530
+
+    terraform plan
+
+[33mcommit 4ffc414ef3079200f35c747805a7f8d874dc23a1[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:26:26 2025 +0530
+
+    terraform plan
+
+[33mcommit f0e4a7dd718f799c1f817c9c4f5c936e2fd695f7[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:16:48 2025 +0530
+
+    terraform plan
+
+[33mcommit 970873ad718d8aa2094f3792acd54f6d47a9a25c[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:09:50 2025 +0530
+
+    terraform plan
+
+[33mcommit d7d10ed0885c4e1e66cd4f337ff541ad94bcdbd1[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:06:55 2025 +0530
+
+    terraform plan
+
+[33mcommit fc823f56c17d91c6eadee1fa27c81629d67ae8f1[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 16:02:09 2025 +0530
+
+    terraform plan
+
+[33mcommit 75ed9c42c15b87e20202843fe2598dec82bf5856[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:59:03 2025 +0530
+
+    terraform plan
+
+[33mcommit 415e5dd05f5c34dc6eee5315a5b702f4ce41dc7d[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:54:48 2025 +0530
+
+    terraform plan
+
+[33mcommit c220453a3e08321554adbbf16a35ed0922607403[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:51:31 2025 +0530
+
+    terraform plan
+
+[33mcommit 0c7f64bf3465ed723f9ec64f623615183d23737f[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:48:41 2025 +0530
+
+    new cred
+
+[33mcommit 4d382d31fb328ba0799eb4c8686c8d3f7e6df00c[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:44:58 2025 +0530
+
+    new cred
+
+[33mcommit fa2c0f806736c5cc0d1e9927221917bf25f93578[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:40:02 2025 +0530
+
+    new cred
+
+[33mcommit 52feb053e25fcbe0d1b3ed9afcbe3d5184a0eee0[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:27:02 2025 +0530
+
+    new cred
+
+[33mcommit 1f408720f6488a0c80c9bd6a53056fd1a5c6948c[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:22:15 2025 +0530
+
+    new cred
+
+[33mcommit 8a86632af095a61ef3cc0046ed56799e012887d3[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:21:15 2025 +0530
+
+    new cred
+
+[33mcommit 974e87ede24091574ace6225017099bd3b68f232[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Fri May 16 15:15:06 2025 +0530
+
+    new cred
+
+[33mcommit 2e898085f30132b618669895b60ce016fdf7f717[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 17:36:22 2025 +0530
+
+    secretes added
+
+[33mcommit 79d7a7a59299da24e22ce899b4f841f52f548a50[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 17:32:19 2025 +0530
+
+    secretes added
+
+[33mcommit 5175bb811188bbffbbe616e64ef1cdfd3e132e4b[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 17:31:17 2025 +0530
+
+    secretes added
+
+[33mcommit f7735bcc3daa502adb8d02995d7448585d4645ba[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 17:26:15 2025 +0530
+
+    secretes added
+
+[33mcommit 82e79591e0315beca768cdfdf51760445656b713[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 17:24:50 2025 +0530
+
+    secretes added
+
+[33mcommit 7772c811c3b4e88fceaef083b798b37b9eea8c3a[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 17:12:03 2025 +0530
+
+    secretes added
+
+[33mcommit b69f47ce72396b6866d9aeb84b98b43d30fd3575[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 16:51:38 2025 +0530
+
+    secretes added
+
+[33mcommit efc34c80d19c3a8f98881b69a610773a20675341[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 16:44:59 2025 +0530
+
+    secretes added
+
+[33mcommit 1fe3b6981bfff5f79fff8c591269d515b3e6db08[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 16:20:04 2025 +0530
+
+    github action code
+
+[33mcommit 9f48b21257d8a225530f8929220328c389561461[m
+Author: Vaibhav G <112879594+VaibhavGajbhe@users.noreply.github.com>
+Date:   Thu May 15 16:05:06 2025 +0530
+
+    Create terraform-plan.yml
+
+[33mcommit 9b2f320bd20987e9b3932dae912ef8ac33b96391[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 16:01:04 2025 +0530
+
+    mm
+
+[33mcommit ad8d3077a191ec9a67049d8756863fd0d45e4834[m
+Author: Vaibhav Gajbhe <vgajbhe22@gmail.com>
+Date:   Thu May 15 16:00:09 2025 +0530
+
+    mm
+
+[33mcommit a2a960ab14d948e289126dd075a8e3bf893d938a[m
+Author: Vaibhav G <112879594+VaibhavGajbhe@users.noreply.github.com>
+Date:   Thu May 15 15:14:16 2025 +0530
+
+    Initial commit
