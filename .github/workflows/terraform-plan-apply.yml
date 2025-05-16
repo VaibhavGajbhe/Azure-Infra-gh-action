@@ -26,11 +26,12 @@ jobs:
         run: terraform init
 
       # Optional: Download plan artifact if generated in 'Terraform Plan'
-      - name: Download tfplan
-        uses: actions/download-artifact@v4
-        with:
-          name: tfplan
-          path: .
+      - name: Terraform validate
+        run: terraform validate
+
+
+      - name: Terraform tf-Plan
+        run: terraform plan
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
