@@ -25,11 +25,11 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Download tfplan
-        uses: actions/download-artifact@v4
-        with:
-          name: tfplan
-          path: .
+    #   - name: Download tfplan
+    #     uses: actions/download-artifact@v4
+    #     with:
+    #       name: tfplan
+    #       path: .
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply -auto-approve
