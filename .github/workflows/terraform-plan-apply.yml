@@ -1,14 +1,15 @@
 name: Terraform Apply
 
 on:
-  # workflow_run:
-  #   workflows: ["Terraform Plan"]
-  #   types:
-  #     - completed
+  workflow_run:
+    workflows: ["Terraform Plan"]
+    types:
+      - completed
+
 jobs:
   terraform-apply:
     runs-on: ubuntu-latest
-    environment: production  # 👈 manual approval via GitHub Environment
+    environment: production  # 👈 Manual approval happens here
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -25,11 +26,12 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-    #   - name: Download tfplan
-    #     uses: actions/download-artifact@v4
-    #     with:
-    #       name: tfplan
-    #       path: .
+      # Optional: Download plan artifact if generated in 'Terraform Plan'
+      - name: Download tfplan
+        uses: actions/download-artifact@v4
+        with:
+          name: tfplan
+          path: .
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve tfplan
