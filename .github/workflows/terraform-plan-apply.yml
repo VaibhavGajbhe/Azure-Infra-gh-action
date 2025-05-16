@@ -16,17 +16,17 @@ jobs:
         run: |
           curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
-      - name: Run TFLint and save report
+      - name: Run TFLint and create SARIF
         run: |
-          tflint --init
-          tflint --format json > tflint-results.json
-        #   tflint --format sarif > tflint-results.sarif
-          
+            tflint --init
+            tflint | tee /tmp/tflint.log
+            tflint --format sarif > tflint-results.sarif || true
 
-    #   - name: Upload TFLint report to GitHub Security
-    #     uses: github/codeql-action/upload-sarif@v2
-    #     with:
-    #       sarif_file: tflint-results.sarif
+          # Upload the SARIF report
+      - name: Upload TFLint report to GitHub Security
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+            sarif_file: tflint-results.sarif
 
 
   terraform-plan-apply:
