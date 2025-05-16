@@ -35,7 +35,6 @@ jobs:
 
 
           - name: Terraform Plan
-            shell: powershell
             run: |
               terraform init 
               terraform plan
