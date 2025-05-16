@@ -6,6 +6,27 @@ on:
       - main
 
 jobs:
+  Linting-Tool:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install TFLint
+        run: |
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+
+      - name: Run TFLint and save report
+        run: |
+          tflint --init
+          tflint --format sarif > tflint-results.sarif
+
+      - name: Upload TFLint report to GitHub Security
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: tflint-results.sarif
+
+
   terraform-apply:
     runs-on: ubuntu-latest
     environment: production  # 👈 Manual approval happens here
