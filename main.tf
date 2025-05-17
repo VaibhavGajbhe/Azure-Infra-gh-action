@@ -43,3 +43,7 @@ resource "azurerm_resource_group" "rg5" {
   name     = "dev-hulk-rg-12"
   location = "westus"
 }
+resource "azurerm_resource_group" "rg6" {
+  name     = "dev-hulk-rg-15"
+  location = "westus"
+}
