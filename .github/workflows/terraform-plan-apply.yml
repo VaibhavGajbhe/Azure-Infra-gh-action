@@ -3,24 +3,22 @@ name: Terraform Apply
 on:
   push:
     branches:
-      - '**'
+      - main
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
     branches:
       - main
   workflow_dispatch:
-
 
 permissions:
   contents: read
   security-events: write
 
-
-
 jobs:
+  # Run on PRs only (NOT on main)
   Linting-Tool:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -37,15 +35,15 @@ jobs:
 
       - name: Run TFLint and Save Report
         run: |
-            tflint --init
-            tflint --format json > tflint-report.json || true
+          tflint --init
+          tflint --format json > tflint-report.json || true
 
       - name: Upload TFLint JSON Report
         uses: actions/upload-artifact@v4
         with:
-            name: tflint-report
-            path: tflint-report.json
-      
+          name: tflint-report
+          path: tflint-report.json
+
       - uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
@@ -55,14 +53,14 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan      
+        run: terraform plan
 
+  # Run only when PR is merged to main (i.e. push to main)
   terraform-plan-apply:
-    if: github.event.pull_request.merged == true
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    needs: Linting-Tool
-    
-    # environment: production  # 👈 Manual approval happens here
+    needs: [Linting-Tool]
+
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -79,14 +77,11 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      # Optional: Download plan artifact if generated in 'Terraform Plan'
-      - name: Terraform validate
+      - name: Terraform Validate
         run: terraform validate
 
-
-      - name: Terraform tf-Plan
+      - name: Terraform Plan
         run: terraform plan
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
