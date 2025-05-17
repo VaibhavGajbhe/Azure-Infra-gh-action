@@ -1,10 +1,15 @@
 name: Terraform Apply
 
 on:
+  push:
+    branches:
+      - '**'
   pull_request:
-    types: [closed]
+    types: [opened, synchronize, reopened, closed]
     branches:
       - main
+  workflow_dispatch:
+
 
 permissions:
   contents: read
@@ -15,6 +20,13 @@ permissions:
 jobs:
   Linting-Tool:
     runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,12 +45,23 @@ jobs:
         with:
             name: tflint-report
             path: tflint-report.json
+      
+      - uses: hashicorp/setup-terraform@v3
 
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan      
 
   terraform-plan-apply:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     needs: Linting-Tool
-    if: github.event.pull_request.merged == true
+    
     # environment: production  # 👈 Manual approval happens here
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
