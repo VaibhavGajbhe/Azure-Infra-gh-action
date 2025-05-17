@@ -1,23 +1,21 @@
-name: Terraform Apply
-
+name: Terraform CI/CD
 
 on:
   push:
     branches:
-      - '**'       # Runs on any branch push (including main)
+      - '**'           # Detects all branch pushes
   pull_request:
     branches:
-      - main       # Triggers on PRs to main
-  workflow_dispatch: # Optional: for manual runs
+      - main           # Detects PRs opened to `main`
+  workflow_dispatch:   # Optional manual trigger
 
 permissions:
   contents: read
   security-events: write
 
 jobs:
-  # Run on PRs only (NOT on main)
+  # ✅ Linting-Tool runs on ALL events (pushes, PRs, merges)
   Linting-Tool:
-    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -26,7 +24,7 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Install TFLint
@@ -38,7 +36,7 @@ jobs:
           tflint --init
           tflint --format json > tflint-report.json || true
 
-      - name: Upload TFLint JSON Report
+      - name: Upload TFLint Report
         uses: actions/upload-artifact@v4
         with:
           name: tflint-report
@@ -55,13 +53,14 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-  # Run only when PR is merged to main (i.e. push to main)
+
+  # ✅ Apply only on push to main (i.e., after PR merge)
   terraform-plan-apply:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    environment: production
     runs-on: ubuntu-latest
     needs: [Linting-Tool]
-
+    environment:
+      name: production
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -69,11 +68,10 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
+      - uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
         run: terraform init
